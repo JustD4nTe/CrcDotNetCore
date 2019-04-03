@@ -1,4 +1,4 @@
-﻿using DotNetCoreWebApi.model;
+﻿using DotNetCoreWebApi.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

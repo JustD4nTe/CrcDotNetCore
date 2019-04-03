@@ -1,5 +1,5 @@
 ﻿using DotNetCoreWebApi.DbContexts;
-using DotNetCoreWebApi.model;
+using DotNetCoreWebApi.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
