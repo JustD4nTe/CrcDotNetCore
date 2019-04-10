@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using DotNetCoreWebApi.Model;
+﻿using DotNetCoreWebApi.Model;
 using DotNetCoreWebApi.Repository;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace DotNetCoreWebApi.Controllers
 {
@@ -16,8 +13,9 @@ namespace DotNetCoreWebApi.Controllers
 
         public MeasurementController(IMeasurementRepository<Measurement> measurementRepository)
         {
-            this._measurementRepository = measurementRepository;
+            _measurementRepository = measurementRepository;
         }
+
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -32,12 +30,22 @@ namespace DotNetCoreWebApi.Controllers
         {
             var measurement = await _measurementRepository.Get(id);
 
+            if (measurement == null)
+            {
+                return NotFound("The Measurement record couldn't be found.");
+            }
+
             return Ok(measurement);
         }
 
         [HttpPost]
         public async Task<IActionResult> Post(Measurement measurement)
         {
+            if (measurement == null)
+            {
+                return BadRequest("Measurement is null.");
+            }
+
             await _measurementRepository.Add(measurement);
 
             return CreatedAtAction(nameof(Get), new { id = measurement.Id }, measurement);
@@ -47,6 +55,12 @@ namespace DotNetCoreWebApi.Controllers
         public async Task<IActionResult> Put(long id, Measurement measurement)
         {
             var measurementToUpdate = await _measurementRepository.Get(id);
+
+            if (measurementToUpdate == null)
+            {
+                return NotFound("The Measurement record couldn't be found.");
+            }
+
             await _measurementRepository.Update(measurementToUpdate, measurement);
 
             return NoContent();
@@ -56,6 +70,12 @@ namespace DotNetCoreWebApi.Controllers
         public async Task<IActionResult> Delete(long id)
         {
             var measurementToDelete = await _measurementRepository.Get(id);
+
+            if (measurementToDelete == null)
+            {
+                return NotFound("The Measurement record couldn't be found.");
+            }
+
             await _measurementRepository.Delete(measurementToDelete);
 
             return NoContent();
