@@ -1,0 +1,11 @@
+Get http://localhost:5000/api/measurement/
+
+PUT http://localhost:5000/api/measurement/
+Content-Type: application/json
+
+{
+    "name": "Measurement_02" ,
+    "value": 0.12 ,
+    "createdBy": "Operator 2",
+    "createdAt": "2019-20-03T00:00:00"
+}
