@@ -16,9 +16,9 @@
     <button type="button" class="btn btn-primary" id="measurements_addBtn">Add</button>
 </div>
 
-<script src="~/js/newMeasurementSection.js"></script>
+<script src="~/js/newMeasurementSection.js" asp-append-version="true"></script>
 
-<div class="container">
+<div class="container" id=" measurement_container">
     <div class="row bg-light">
         <div class="col-sm">Id</div>
         <div class="col-sm">Name</div>
@@ -26,13 +26,16 @@
         <div class="col-sm">CreatedBy</div>
         <div class="col-sm"><!--Empty column for remove button--></div>
     </div>
-    <div class="row">
-        <div class="col-sm">First column</div>
-        <div class="col-sm">Second column</div>
-        <div class="col-sm">Third coulmn</div>
-        <div class="col-sm">Fourth column</div>
+    <div class="row d-none">
+        <div class="col-sm" data-column-type="id"></div>
+        <div class="col-sm" data-column-type="name"></div>
+        <div class="col-sm" data-column-type="value"></div>
+
+        <div class="col-sm" data-column-type="createdBy"></div>
         <div class="col-sm"><a href="#">Remove</a></div>
     </div>
 </div>
 
-<script src="~/js/measurementsController.js"></script>
+
+<script src="~/js/measurementListSection.js" asp-append-version="true"></script>
+<script src="~/js/measurementsController.js" asp-append-version="true"></script>
