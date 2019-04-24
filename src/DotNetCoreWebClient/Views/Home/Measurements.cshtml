@@ -4,15 +4,34 @@
 }
 
 <h1>Measurements</h1>
+<div class="form-group">
+    <div class="form-group">
+        <label for="measurements_nameInput">Name</label>
+        <input type="text" class="form-control" id="measurements_nameInput" placeholder="Enter name" />
+    </div>
+    <div class="form-group">
+        <label for="measurements_valueInput">Value</label>
+        <input type="text" class="form-control" id="measurements_valueInput" placeholder="Enter value" />
+    </div>
+    <button type="button" class="btn btn-primary" id="measurements_addBtn">Add</button>
+</div>
 
-<div class="form-group">
-    <label for="measurements_nameInput">Name</label>
-    <input type="text" class="form-control" id="measurements_nameInput" placeholder="Enter name" />
+
+<div class="container">
+    <div class="row bg-light">
+        <div class="col-sm">Id</div>
+        <div class="col-sm">Name</div>
+        <div class="col-sm">Value</div>
+        <div class="col-sm">CreatedBy</div>
+        <div class="col-sm"><!--Empty column for remove button--></div>
+    </div>
+    <div class="row">
+        <div class="col-sm">First column</div>
+        <div class="col-sm">Second column</div>
+        <div class="col-sm">Third coulmn</div>
+        <div class="col-sm">Fourth column</div>
+        <div class="col-sm"><a href="#">Remove</a></div>
+    </div>
 </div>
-<div class="form-group">
-    <label for="measurements_valueInput">Value</label>
-    <input type="text" class="form-control" id="measurements_valueInput" placeholder="Enter value" />
-</div>
-<button type="button" class="btn btn-primary" id="measurements_addBtn">Add</button>
 
 <script src="~/js/newMeasurementSection.js"></script>
