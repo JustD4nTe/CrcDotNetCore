@@ -15,8 +15,10 @@
             newRow.remove()
         })
 
+        idColumn.innerHTML = measurement.id
         nameColumn.innerHTML = measurement.name
         valueColumn.innerHTML = measurement.value
+        createdByColumn.innerHTML = measurement.createdBy
 
         newRow.classList.remove('d-none')
         grid.appendChild(newRow)
