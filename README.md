@@ -1,4 +1,4 @@
-# PANIC - Possible Actions kNown In Chess
+# CrcDotNetCore
 Fullstack application created in Corporate Readiness Certificate course („.NET Development in Healthcare & Industrial Automation”).
 
 ## Technologies
